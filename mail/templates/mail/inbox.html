@@ -1,0 +1,53 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="head-div">
+        <a href="{% url 'index' %}">
+            <div class="mail-brand">
+                <div class="mail-brand-icon"><img src="{% static 'mail/email.png' %}" alt="Mail-Icon"></div>
+                <div class="mail-brand-name">MyMail</div>
+            </div>
+        </a>
+
+        <div id="head-user">
+            <div class="head-user" id="head-email-id">{{ request.user.email }}</div>
+            <div class="head-profile-pic"><i class="fa fa-user-circle fa-3x"></i></div>
+        </div>
+
+        <div class="head-btn-wrap">
+            <button class="btn btn-sm btn-outline-primary head-btn" id="inbox" data-view="inbox" data-page="inbox">Inbox <i class="fa fa-inbox fa-sm"></i></button>
+            <button class="btn btn-sm btn-outline-primary head-btn" id="compose" data-view="compose" data-page="compose">Compose <i class="fa fa-plus-circle fa-sm"></i></button>
+            <button class="btn btn-sm btn-outline-primary head-btn" id="sent" data-view="sent" data-page="sent">Sent <i class="fa fa-check fa-sm"></i></button>
+            <button class="btn btn-sm btn-outline-primary head-btn" id="archived" data-view="archive" data-page="archive">Archived <i class="fa fa-archive fa-sm"></i></button>
+            <a class="btn btn-sm btn-outline-primary head-btn" href="{% url 'logout' %}">Log Out <i class="fa fa-sign-out fa-sm"></i></a>
+        </div>
+    </div>
+
+    <div id="emails-view" class="row emails-view">
+    </div>
+
+    <div id="compose-view" class="row compose-view">
+        <h3>New Email</h3>
+        <form id="compose-form">
+            <div class="form-group">
+                From: <input disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="form-group">
+                To: <input id="compose-recipients" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            <button type="submit" class="btn btn-primary .submit-btn" id="send" role="button"> Send <i class="fa fa-arrow-right fa-md"></i></button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/jquery/dist/jquery.slim.min.js' %}"></script>
+    <script src="{% static 'mail/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'mail/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}

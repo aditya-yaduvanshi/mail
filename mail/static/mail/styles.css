@@ -1,0 +1,282 @@
+body {
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+.head-div {
+    position: relative;
+    top: 0;
+    height: 60px;
+    border-bottom: 2px solid #0275d8;
+    margin-bottom: 20px;
+}
+.head-div .mail-brand {
+    display: flex;
+    width: 200px;
+    height: 100%;
+    cursor: pointer;
+}
+.head-div .mail-brand:hover {
+    background: rgb(245, 245, 245);
+}
+.head-div .mail-brand .mail-brand-icon {
+    height: 100%;
+    padding: 8px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+.head-div .mail-brand .mail-brand-icon img {
+    width: 40px;
+}
+.head-div .mail-brand div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.head-div .mail-brand .mail-brand-name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    font-weight: 800;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #0275d8;
+}
+.head-div .mail-brand div:hover {
+    background: rgb(245, 245, 245);
+}
+.head-div .head-btn-wrap {
+    position: absolute;
+    top: 14px;
+    left: 300px;
+}
+.head-div a {
+    text-decoration: none;
+}
+.head-div a:hover {
+    color: white;
+}
+#head-user {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+#head-user:hover {
+    background: rgb(245, 245, 245);
+}
+#head-user div {
+    display: flex;
+    margin-right: 5px;
+}
+#head-user .head-user {
+    height: 100%;
+    align-items: center;
+    padding: 0 10px;
+    font-size: larger;
+    font-weight: 600;
+}
+#head-user .head-profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-bottom: 2px solid rgb(50, 50, 50);
+    padding: 1px;
+    color: rgb(245, 245, 245);
+    background: rgb(100, 100, 100);
+}
+textarea {
+    min-height: 300px;
+}
+.compose-view .submit-btn {
+    margin-top: 40px;
+}
+.email {
+    border: 2px solid rgb(200, 200, 200);
+    height: 45px;
+    padding: 8px 10px;
+    margin: 2px 5px;
+    background: rgb(225, 225, 225);
+    cursor: pointer;
+}
+.email:hover {
+    box-shadow: 10cm;
+    background: rgb(200, 200, 200);
+}
+.email .email-div {
+    overflow: hidden;
+    height: 100%;
+    font-weight: bold;
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.email .email-sender {
+    width: 300px;
+}
+.email .email-subject {
+    width: 550px;
+}
+.email .email-timestamp {
+    width: 250px;
+    display: flex;
+    justify-self: flex-end;
+    justify-content: flex-end;
+}
+#emails-view .page {
+    border-bottom: 2px solid #0275d8;
+    padding: 30px 10px;
+    padding-left: 100px;
+    position: relative;
+    left: 0;
+    margin-bottom: 50px;
+}
+#emails-view .page div {
+    padding: 10px;
+    margin: 1px 0 1px 0;
+    border-bottom: 2px solid rgb(150, 150, 150);
+    border-radius: 20px;
+}
+#emails-view .page .page-profile-pic {
+    border-bottom: 2px solid rgb(100, 100, 100);
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    background: rgb(225, 225, 225);
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+#emails-view .page .page-profile-pic {
+    padding: 6px;
+    color: rgb(245, 245, 245);
+    background: rgb(50, 50, 50);
+}
+#emails-view .page-btns-wrap {
+    display: flex;
+    align-items: center;
+}
+#emails-view .page-btns-wrap .page-buttons {
+    margin-right: 20px;
+}
+#emails-view .page .page-subject {
+    font-size: larger;
+}
+#emails-view .page .page-body {
+    background: rgb(225, 225, 225);
+    padding: 50px;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 0 10px 0;
+}
+
+.login-sign-up {
+    max-width: 500px;
+    margin: auto;
+    border: 2px solid #0275d8;
+    border-radius: 20px;
+    padding: 20px;
+    transform: translateY(50%);
+}
+.login-sign-up h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.login-sign-up .login-message {
+    border-radius: 4px;
+    padding: 6px;
+    margin-bottom: 18px;
+    background: rgba(217, 83, 79, 0.3);
+    border: 1px solid #d9534f;
+}
+
+@media all and (max-width:1200px){
+    .head-div .head-btn-wrap {
+        left: 220px;
+    }
+    .email .email-sender {
+        width: 250px;
+    }
+    .email .email-subject {
+        width: 425px;
+    }
+    .email .email-timestamp {
+        width: 250px;
+        justify-content: flex-end;
+    }
+}
+
+@media all and (max-width:992px){
+    .head-div .head-btn-wrap {
+        top: 75px;
+        display: flex;
+        width: 100%;
+        left: 0;
+        margin-top: 0;
+        justify-content: center;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #0275d8;
+    }
+    .head-div .head-btn-wrap .head-btn {
+        margin: auto 5px;
+    }
+    .emails-view, #compose-view {
+        margin-top: 75px;
+    }
+    .email {
+        height: 80px;
+        position: relative;
+    }
+    .email .email-div {
+        height: 50%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+    }
+    .email .email-sender, .email-timestamp {
+        top: 0;
+    }
+    .email .email-sender {
+        width: 430px;
+    }
+    .email .email-subject {
+        width: 686px;
+        bottom: 0;
+        left: 10px;
+    }
+    .email .email-timestamp {
+        width: 250px;
+        right: 10px;
+    }
+    #emails-view .page .page-body {
+        padding: 20px;
+        font-size: medium;
+    }
+}
+
+/*@media all and (max-width:480px){
+    .email {
+        max-width: 470px;
+    }
+    .email .email-sender, .email-timestamp {
+        top: 0;
+    }
+    .email .email-sender {
+        width: 220px;
+    }
+    .email .email-subject {
+        max-width: 200px;
+        bottom: 0;
+        left: 10px;
+    }
+    .email .email-timestamp {
+        width: 220px;
+        height: 100%;
+        right: 10px;
+    }
+}*/
