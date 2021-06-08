@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Mail{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'mail/bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'mail/font-awesome/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'mail/bootstrap-social/bootstrap-social.css' %}">
+        <link rel="stylesheet" href="{% static 'mail/styles.css' %}">
+        
+        {% block script %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
