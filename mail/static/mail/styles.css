@@ -92,6 +92,10 @@ body {
 textarea {
     min-height: 300px;
 }
+.status-box {
+    padding: 10px;
+    border-radius: 10px;
+}
 .compose-view .submit-btn {
     margin-top: 40px;
 }
@@ -115,7 +119,6 @@ textarea {
     padding-left: 5px;
     padding-right: 5px;
 }
-
 .email .email-sender {
     width: 300px;
 }

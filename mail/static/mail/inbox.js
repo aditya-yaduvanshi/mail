@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('button').forEach(button => {
     button.onclick = function () {
       const view = this.dataset.view;
-      console.log(`button clicked : ${view}\nhistory push state : ${view}\nurl updating : /${view}`);
-      history.pushState({view:`${view}`},'',`/${view}`);
+      //console.log(`button clicked : ${view}\nhistory push state : ${view}\nurl updating : /${view}`);
+      //history.pushState({view:`${view}`},'',`/${view}`);
       if(view == "compose") {
         console.log('compose is active');
         compose();
@@ -27,11 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
   
 
   // by default inbox is loaded
-  history.pushState({view:'inbox'},'','');
+  //history.pushState({view:'inbox'},'','');
   load_mailbox('inbox');
 });
 
 // browser buttons behaviour setting
+/*
 window.onpopstate = function (event) {
   if(event.state.view == 'compose'){
     console.log(`onpopstate expected - in compose, found : ${event.state.view}`);
@@ -42,7 +43,7 @@ window.onpopstate = function (event) {
     load_mailbox(event.state.view);
   }
 }
-
+*/
 /*
 var currentPath='/', currentView='/', lastSegment=false, unloadFlag=0;
 window.addEventListener('beforeunload', function (event){
@@ -170,14 +171,14 @@ function showMail(email_id,mailbox,status_box) {
     }
 
     forward.addEventListener('click',() => {
-      console.log('forward is clicked');
-      history.pushState({view:'compose'},'','/compose/forward');
+      //console.log('forward is clicked');
+      //history.pushState({view:'compose'},'','/compose/forward');
       compose(email,false,true);
     })
 
     reply.addEventListener('click',() => {
       console.log('clicked compose reply');
-      history.pushState({view:'compose'},'','/compose/reply');
+      //history.pushState({view:'compose'},'','/compose/reply');
       compose(email,true);
     });
 
@@ -252,7 +253,7 @@ function load_mailbox(mailbox) {
   fetch(`emails/${mailbox}`)
   .then(response => response.json())
   .then(emails => {
-    console.log(emails);
+    //console.log(emails);
     load_emails(emails,mailbox);
   });
 }
@@ -289,8 +290,8 @@ function load_emails(emails,mailbox) {
 
     // click behaviour to email
     email.addEventListener('click', function(){ 
-      console.log(`email is clicked\npushing history ${mailbox}/${mail.id}`);
-      history.pushState({view: `${mailbox}/${mail.id}`},'',`${mailbox}/${mail.id}`);
+      //console.log(`email is clicked\npushing history ${mailbox}/${mail.id}`);
+      //history.pushState({view: `${mailbox}/${mail.id}`},'',`${mailbox}/${mail.id}`);
       showMail(mail.id,mailbox);
     });
   });
@@ -307,7 +308,7 @@ function compose(email,reply,forward) {
       // Auto fill some fields
       document.querySelector('#compose-recipients').value = `${email.sender}`;
       document.querySelector('#compose-subject').value = `Re: ${email.subject}`;
-      document.querySelector('#compose-body').value = `On ${email.timestamp} ${email.sender} wrote: ${email.body} </br>`;
+      document.querySelector('#compose-body').value = `On ${email.timestamp} ${email.sender} wrote: ${email.body}`;
     }
     else if (forward) {
       // Auto fill some fields
@@ -359,7 +360,7 @@ function send() {
   })
   .then(response => response.json())
   .then(result => {
-    console.log(`post response : ${result}`);
+    //console.log(`post response : ${result}`);
     // request confirmation status
     confirm_status = request_status(result);
     return confirm_status;
